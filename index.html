@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #282c34;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: calc(10px + 2vmin);
+            color: white;
+        }
+
+        button {
+            padding: 32px;
+        }
+
+        #button2 {
+            margin: 32px 0;
+        }
+
+    </style>
+</head>
+<script>
+    function method1() {
+      var audio = document.getElementById('audio-tag')
+      audio.pause()
+      audio.currentTime = 0
+      audio.play().then(()=>{console.log('Audio started from method 1')})
+      console.log('Audio played from method 1')
+    }
+    var audioObj = new Audio("https://bucketeer-0d5e456e-28af-4d56-9cda-da3060a4619b.s3.amazonaws.com/mixkit_plastic_bubble_click_1124_a2f2ddef54_d22598508a.wav")
+    function method2() {
+      audioObj.pause()
+      audioObj.currentTime = 0
+      audioObj.play().then(()=>{console.log('Audio started from method 2')})
+      console.log('Audio played from method 2')
+    }
+    function method3() {
+      new Audio("https://bucketeer-0d5e456e-28af-4d56-9cda-da3060a4619b.s3.amazonaws.com/mixkit_plastic_bubble_click_1124_a2f2ddef54_d22598508a.wav").play().then(()=>{console.log('Audio started from method 3')})
+      console.log('Audio played from method 3')
+    }
+</script>
+<body>
+<audio src="https://bucketeer-0d5e456e-28af-4d56-9cda-da3060a4619b.s3.amazonaws.com/mixkit_plastic_bubble_click_1124_a2f2ddef54_d22598508a.wav" preload="auto" id="audio-tag"></audio>
+<button id="button1" onclick="method1()">Play (Method 1)</button>
+<button id="button2" onclick="method2()">Play (Method 2)</button>
+<button id="button3" onclick="method3()">Play (Method 3)</button>
+</body>
+</html>

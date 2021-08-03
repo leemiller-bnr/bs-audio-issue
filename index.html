@@ -20,7 +20,7 @@
             padding: 32px;
         }
 
-        #button2 {
+        #button2, #button3 {
             margin: 32px 0;
         }
 
@@ -45,11 +45,18 @@
       new Audio("https://bucketeer-0d5e456e-28af-4d56-9cda-da3060a4619b.s3.amazonaws.com/mixkit_plastic_bubble_click_1124_a2f2ddef54_d22598508a.wav").play().then(()=>{console.log('Audio started from method 3')})
       console.log('Audio played from method 3')
     }
+    function method4() {
+      var audio = document.getElementById('audio-tag')
+      audio.src = "https://bucketeer-0d5e456e-28af-4d56-9cda-da3060a4619b.s3.amazonaws.com/mixkit_plastic_bubble_click_1124_a2f2ddef54_d22598508a.wav"
+      audio.play().then(()=>{console.log('Audio started from method 4')})
+      console.log('Audio played from method 4')
+    }
 </script>
 <body>
 <audio src="https://bucketeer-0d5e456e-28af-4d56-9cda-da3060a4619b.s3.amazonaws.com/mixkit_plastic_bubble_click_1124_a2f2ddef54_d22598508a.wav" preload="auto" id="audio-tag"></audio>
 <button id="button1" onclick="method1()">Play (Method 1)</button>
 <button id="button2" onclick="method2()">Play (Method 2)</button>
 <button id="button3" onclick="method3()">Play (Method 3)</button>
+<button id="button4" onclick="method4()">Play (Method 3)</button>
 </body>
 </html>
